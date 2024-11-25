@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush01.c                                           :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akichaev <akichaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 11:19:46 by akichaev          #+#    #+#             */
-/*   Updated: 2024/11/24 09:22:54 by akichaev         ###   ########.fr       */
+/*   Updated: 2024/11/24 09:22:31 by akichaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,22 @@ int	is_conner_printed(int row, int col, int current_row, int current_col)
 {
 	if ((current_row == 0 && current_col == 0))
 	{
-		ft_putchar('/');
+		ft_putchar('o');
 		return (1);
 	}
 	if (current_row == 0 && current_col == col)
 	{
-		ft_putchar('\\');
+		ft_putchar('o');
 		return (1);
 	}
 	if (current_row == row && current_col == 0)
 	{
-		ft_putchar('\\');
+		ft_putchar('o');
 		return (1);
 	}
 	if (current_row == row && current_col == col)
 	{
-		ft_putchar('/');
+		ft_putchar('o');
 		return (1);
 	}
 	return (0);
@@ -74,7 +74,7 @@ void	main_algo(int row, int col, int current_row, int current_col)
 	if (!is_conner(row, col, current_row, current_col) && (current_row == 0
 			|| current_row == row))
 	{
-		ft_putchar('*');
+		ft_putchar('-');
 		return ;
 	}
 	if (is_vertical(row, col, current_row, current_col))
@@ -88,7 +88,7 @@ void	main_algo(int row, int col, int current_row, int current_col)
 				i++;
 			}
 		}
-		ft_putchar('*');
+		ft_putchar('|');
 		return ;
 	}
 }
@@ -100,7 +100,7 @@ void	rush(int x, int y)
 	int	row;
 	int	col;
 
-	if (!x)
+	if (!x || !y)
 	{
 		return ;
 	}
